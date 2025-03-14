@@ -18,6 +18,10 @@ public class Robo {
         System.out.println(this.posicaoX + " " + this.posicaoY);
     }
 
+    public String getName(){
+        return this.nome;
+    }
+
     public int getPosX(){
         return this.posicaoX;
     }

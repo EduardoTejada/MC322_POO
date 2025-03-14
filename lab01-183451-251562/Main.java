@@ -10,7 +10,9 @@ public class Main {
         System.out.println(a1.dentroDosLimites(Senna.getPosX(), Senna.getPosY()));
         System.out.println(a1.dentroDosLimites(Mooncake.getPosX(), Mooncake.getPosY()));
 
+        System.out.print("Posição do "+Senna.getName()+": ");
         Senna.exibirPosicao();
+        System.out.print("Posição do "+Mooncake.getName()+": ");
         Mooncake.exibirPosicao();
     }
 }
