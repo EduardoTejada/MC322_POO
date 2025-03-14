@@ -3,9 +3,6 @@ public class Robo {
     private int posicaoX;
     private int posicaoY;
     
-    public Robo(){
-    }
-    
     public Robo(String n, int x, int y){
         this.nome = n;
         this.posicaoX = x;
