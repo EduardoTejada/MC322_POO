@@ -1,5 +1,3 @@
-package MC322-POO.lab01-183451-251562;
-
 public class Robo {
     private String nome;
     private int posicaoX;
