@@ -1,0 +1,33 @@
+package MC322-POO.lab01-183451-251562;
+
+public class Robo {
+    private String nome;
+    private int posicaoX;
+    private int posicaoY;
+    
+    public Robo(){
+    }
+    
+    public Robo(String n, int x, int y){
+        this.nome = n;
+        this.posicaoX = x;
+        this.posicaoY = y;
+    }
+
+    public void mover(int deltaX, int deltaY){
+        this.posicaoX = deltaX;
+        this.posicaoY = deltaY;
+    }
+
+    public void exibirPosicao(){
+        System.out.println(this.posicaoX + " " + this.posicaoY);
+    }
+
+    public int getPosX(){
+        return this.posicaoX;
+    }
+    
+    public int getPosY(){
+        return this.posicaoY;
+    }
+}
