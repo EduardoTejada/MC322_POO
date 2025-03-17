@@ -10,8 +10,8 @@ public class Robo {
     }
 
     public void mover(int deltaX, int deltaY){
-        this.posicaoX = deltaX;
-        this.posicaoY = deltaY;
+        this.posicaoX += deltaX;
+        this.posicaoY += deltaY;
     }
 
     public void exibirPosicao(){
