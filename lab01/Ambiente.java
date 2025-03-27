@@ -11,3 +11,4 @@ public class Ambiente {
         return(this.altura >= x && this.largura >= y);
     }
 }
+ 
