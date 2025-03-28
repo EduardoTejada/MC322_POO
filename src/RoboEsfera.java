@@ -11,6 +11,8 @@ public class RoboEsfera extends RoboTerrestre{
         if (getVelocidadeMaxima() >= getVelocidadeMovimento()) {
             setPosX(getPosX()+deltaX + inercia*getVelocidadeMovimento());
             setPosY(getPosY()+deltaY+ inercia*getVelocidadeMovimento());
+          }else{
+            System.out.println("Velocidade acima do limite");
           }
     }
 }

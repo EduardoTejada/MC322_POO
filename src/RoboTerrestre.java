@@ -11,6 +11,8 @@ public class RoboTerrestre extends Robo{
       if (velocidadeMaxima >= velocidadeMovimento) {
         setPosX(getPosX()+deltaX);
         setPosY(getPosY()+deltaY);
+      }else{
+        System.out.println("Velocidade acima do limite");
       }
     }
 
