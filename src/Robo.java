@@ -5,7 +5,9 @@ public class Robo {
     private String direcao;
     private int posicaoX;
     private int posicaoY;
-    
+    public String[] listaDirecoes = {"norte","leste", "sul", "oeste"};
+
+
     public Robo(String n, String d, int x, int y){
         this.nome = n;
         this.direcao = d;
