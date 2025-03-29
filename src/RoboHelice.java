@@ -14,7 +14,7 @@ public class RoboHelice extends RoboAereo{
             setPosX(getPosX()+deltaX);
             setPosY(getPosY()+deltaY);
         }else{
-            System.out.println("Sem altura suficiente para movimentar");
+            System.out.println("Sem altura suficiente para movimentar, altura atual: "+getAltitude()+" altura necessária: "+altitudeMin);
         }
     }
 

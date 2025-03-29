@@ -1,7 +1,7 @@
 public class RoboAsa extends RoboAereo{
 /*A ideia aqui é de algo similar a um avião, só pode ganhar altura enquanto se movimenta para frente há uma velocidade mínima*/
 private int velocidadeMinima;
-private int velocidadeMovimento = 0;    
+private int velocidadeMovimento = 1;    
 public RoboAsa(String n, String d, int x, int y, int alt, int altMax, int velMin){
         super(n, d, x, y, alt, altMax);
         velocidadeMinima = velMin;
@@ -12,7 +12,7 @@ public RoboAsa(String n, String d, int x, int y, int alt, int altMax, int velMin
         if (velocidadeMovimento>=velocidadeMinima) {
             setAltitude(getAltitude()+deltaZ);
         }else{
-            System.out.println("Sem velocidade suficiente para subir");
+            System.out.println("Sem velocidade suficiente para subir, velocidade atual: "+getVelocidadeMovimento()+ " velocidade necessária: "+velocidadeMinima);
         }
     }
 

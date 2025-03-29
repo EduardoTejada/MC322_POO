@@ -2,7 +2,10 @@ public class Main {
     public static void main(String[] args) {
         Ambiente a1 = new Ambiente(10, 10, 10);
         RoboEsteira Tanque = new RoboEsteira("Tanque", "Norte", 1, 2, 1, 6);
-        RoboEsfera BB8 = new RoboEsfera("BB8", "Sul", 5, 5, 2, 2);
+        RoboEsfera BB8 = new RoboEsfera("BB8", "Sul", 5, 5, 2, 2); //BB8 é o drone da ultima trilogia de StarWars
+        RoboHelice drone = new RoboHelice("drone", "Leste", 2, 3, 0, 7, 2);
+        RoboAsa aviao = new RoboAsa("aviao", "Oeste", 6, 7, 0, 10, 4);
+
 
         //Teste da movimentação terrestre
         Tanque.mover(3, 5);
@@ -32,6 +35,36 @@ public class Main {
         System.out.print("Direção após rotacionar novamente "+": ");
         Tanque.girarRobo();
         Tanque.exibirDirecao();
+
+        //teste movimentação do RoboHelice
+        System.out.print("Posição original do "+drone.getNome()+": ");
+        drone.exibirPosicao();
+        drone.mover(3, 2); //tentativa de mover
+        drone.subir(5);
+        System.out.println("Nova altura "+drone.getNome()+": "+ drone.getAltitude());
+        drone.mover(3, 2); //nova tentativa de mover após elevar a altura
+        System.out.print("Nova posição "+drone.getNome()+": ");
+        drone.exibirPosicao();
+
+        //teste movimentação robo asa
+        System.out.print("Posição original do "+aviao.getNome()+": ");
+        aviao.exibirPosicao();
+        aviao.mover(3, 2);
+        System.out.print("Nova posição "+aviao.getNome()+": ");
+        aviao.exibirPosicao();
+        System.out.println("Altura original do "+aviao.getNome()+": "+ aviao.getAltitude());
+        aviao.subir(3);
+        aviao.setVelocidadeMovimento(5); //elevando a velocidade 
+        aviao.subir(3); // nova tentativa de elevar a altura
+        System.out.println("Nova velocidade do "+aviao.getNome()+": "+ aviao.getVelocidadeMovimento());
+        System.out.println("Nova Altura do "+aviao.getNome()+": "+ aviao.getAltitude());
+
+
+        /*
+        drone.subir(5);
+        drone.mover(3, 2); //nova tentativa de mover após elevar a altura
+        */
+        
 
     }
 }
