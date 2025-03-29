@@ -5,7 +5,7 @@ public class Robo {
     private String direcao;
     private int posicaoX;
     private int posicaoY;
-    public String[] listaDirecoes = {"norte","leste", "sul", "oeste"};
+    public String[] listaDirecoes = {"Norte","Leste", "Sul", "Oeste"};
 
 
     public Robo(String n, String d, int x, int y){
@@ -22,6 +22,10 @@ public class Robo {
 
     public void exibirPosicao(){
         System.out.println(this.posicaoX + " " + this.posicaoY);
+    }
+
+    public void exibirDirecao(){
+        System.out.println(this.direcao);
     }
 
     public void identificarObstaculo(Ambiente a){

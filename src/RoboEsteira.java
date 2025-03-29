@@ -6,21 +6,15 @@ public class RoboEsteira extends RoboTerrestre{
         VelocidadeGiro = vGiro;
     }
 
-    public void girarRobo(String sentido){
-        //Percorre as direções cardeais começando da que o robô está apontando, o número de direções percorrida depende da velocidade de giro
-        if (sentido == "orario") {
+    public void girarRobo(){
+        //Percorre as direções cardeais no sentido horário começando da que o robô está apontando, o número de direções percorrida depende da velocidade de giro
             for (int i = 0; i < listaDirecoes.length; i++) {
                 if (listaDirecoes[i] == getDirecao()) {
-                    setDirecao(listaDirecoes[(i+VelocidadeGiro)-(VelocidadeGiro/4)*4]);
+                    setDirecao(listaDirecoes[(i+VelocidadeGiro)-((VelocidadeGiro+i)/4)*4]);
+                    break;
                 }
             }
-        } else {
-            for (int i = 0; i < listaDirecoes.length; i++) {
-                if (listaDirecoes[i] == getDirecao()) {
-                    setDirecao(listaDirecoes[(i-VelocidadeGiro)+(VelocidadeGiro/4)*4]);
-                }            
-            }       
-        }
+        
     }
 
     public int getVelocidadeGiro() {
