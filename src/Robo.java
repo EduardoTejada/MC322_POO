@@ -6,7 +6,7 @@ public class Robo {
     private String direcao;      // Direção atual do robô (Norte, Sul, Leste, Oeste)
     private int posicaoX;        // Posição X do robô no ambiente
     private int posicaoY;        // Posição Y do robô no ambiente
-    
+
     public String[] listaDirecoes = {"Norte","Leste", "Sul", "Oeste"}; // Lista de direções possíveis para o robô
 
     // Construtor da classe, inicializa o robô com nome, direção e posição inicial
@@ -35,10 +35,10 @@ public class Robo {
 
     // Verifica se algum robô está imediatamente ao lado (direita, esquerda, acima ou abaixo)
     private boolean ehAdjacente(Robo outroRobo){
-        if(outroRobo.getPosX() == this.posicaoX+1 && outroRobo.getPosY() == this.posicaoY || 
+        return(outroRobo.getPosX() == this.posicaoX+1 && outroRobo.getPosY() == this.posicaoY || 
                 outroRobo.getPosX() == this.posicaoX-1 && outroRobo.getPosY() == this.posicaoY || 
                 outroRobo.getPosX() == this.posicaoX && outroRobo.getPosY() == this.posicaoY+1 || 
-                outroRobo.getPosX() == this.posicaoX && outroRobo.getPosY() == this.posicaoY-1)
+                outroRobo.getPosX() == this.posicaoX && outroRobo.getPosY() == this.posicaoY-1);
     }
     
     // Método para identificar se há um obstáculo (outro robô) em uma posição adjacente
@@ -47,7 +47,7 @@ public class Robo {
         for(int i = 0; i < r.size(); i++){
                 if(ehAdjacente(r.get(i))) // Verifica se a posição do outro robô é adjacente a desse robô
                     // Exibe uma mensagem informando que há um obstáculo
-                    System.out.println("Robo " + r.get(i).getNome() + "na posicao " + r.get(i).getPosX() + ", " + r.get(i).getPosY() + " é um obstáculo");;
+                    System.out.println("Robo " + r.get(i).getNome() + "na posicao " + r.get(i).getPosX() + ", " + r.get(i).getPosY() + " é um obstáculo");
         }
     }
 
@@ -68,6 +68,10 @@ public class Robo {
         this.posicaoY = y;
     }
 
+    public void setListaDirecoes(String[] listaDirecoes) {
+        this.listaDirecoes = listaDirecoes;
+    }
+
     
     // Métodos getters (retornam os valores dos atributos)
     public String getNome(){
@@ -76,6 +80,10 @@ public class Robo {
 
     public String getDirecao(){
         return this.direcao;
+    }
+
+    public String[] getListaDirecoes() {
+        return listaDirecoes;
     }
 
     public int getPosX(){
