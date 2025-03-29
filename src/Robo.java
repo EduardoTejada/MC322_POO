@@ -19,8 +19,15 @@ public class Robo {
 
     // Método para mover o robô na grade, alterando sua posição X e Y
     public void mover(int deltaX, int deltaY){
-        this.posicaoX += deltaX;
-        this.posicaoY += deltaY;
+        if(this.posicaoX + deltaX >= 0)
+            this.posicaoX += deltaX;
+        else
+            this.posicaoX = 0;
+        
+        if(this.posicaoY + deltaY >= 0)
+            this.posicaoY += deltaY;
+        else
+            this.posicaoY = 0;
     }
 
     // Exibe a posição atual do robô no console
