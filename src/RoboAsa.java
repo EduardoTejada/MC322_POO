@@ -1,33 +1,47 @@
-public class RoboAsa extends RoboAereo{
-/*A ideia aqui é de algo similar a um avião, só pode ganhar altura enquanto se movimenta para frente há uma velocidade mínima*/
-private int velocidadeMinima;
-private int velocidadeMovimento = 1;    
-public RoboAsa(String n, String d, int x, int y, int alt, int altMax, int velMin){
-        super(n, d, x, y, alt, altMax);
-        velocidadeMinima = velMin;
+// Classe RoboAsa que herda de RoboAereo
+// Representa um robô aéreo semelhante a um avião, que só pode ganhar altitude enquanto se movimenta para frente, com uma velocidade mínima
+public class RoboAsa extends RoboAereo {
+    // Atributo que define a velocidade mínima necessária para o robô subir
+    private int velocidadeMinima;
+    
+    // Atributo que define a velocidade de movimento do robô
+    private int velocidadeMovimento = 1;  
 
+    // Construtor da classe RoboAsa
+    // Inicializa o robô com nome, direção, posição (x, y), altitude atual, altitude máxima e velocidade mínima para subida
+    public RoboAsa(String n, String d, int x, int y, int alt, int altMax, int velMin){
+        super(n, d, x, y, alt, altMax);  // Chama o construtor da classe RoboAereo
+        velocidadeMinima = velMin;  // Define a velocidade mínima necessária para subir
     }
 
+    // Método para subir o robô, aumentando a altitude
     public void subir(int deltaZ){
-        if (velocidadeMovimento>=velocidadeMinima) {
-            setAltitude(getAltitude()+deltaZ);
-        }else{
-            System.out.println("Sem velocidade suficiente para subir, velocidade atual: "+getVelocidadeMovimento()+ " velocidade necessária: "+velocidadeMinima);
+        // Verifica se o robô está se movendo rápido o suficiente para subir
+        if (velocidadeMovimento >= velocidadeMinima) {
+            setAltitude(getAltitude() + deltaZ);  // Aumenta a altitude do robô
+        } else {
+            // Exibe uma mensagem caso a velocidade não seja suficiente para subir
+            System.out.println("Sem velocidade suficiente para subir, velocidade atual: " + getVelocidadeMovimento() + 
+                               " velocidade necessária: " + velocidadeMinima);
         }
     }
 
+    // Retorna a velocidade mínima necessária para subir
     public int getVelocidadeMinima() {
         return velocidadeMinima;
     }
 
+    // Define uma nova velocidade mínima necessária para subir
     public void setVelocidadeMinima(int velocidadeMinima) {
         this.velocidadeMinima = velocidadeMinima;
     }
 
+    // Retorna a velocidade de movimento do robô
     public int getVelocidadeMovimento() {
         return velocidadeMovimento;
     }
 
+    // Define uma nova velocidade de movimento para o robô
     public void setVelocidadeMovimento(int velocidadeMovimento) {
         this.velocidadeMovimento = velocidadeMovimento;
     }
