@@ -1,34 +1,47 @@
-public class RoboTerrestre extends Robo{
-    private int velocidadeMaxima = 10;
-    private int velocidadeMovimento;
+// Classe RoboTerrestre que herda da classe Robo
+public class RoboTerrestre extends Robo {
+  // Velocidade máxima permitida para o robô terrestre
+  private int velocidadeMaxima = 10;
+  
+  // Velocidade atual do movimento do robô
+  private int velocidadeMovimento;
 
-    public RoboTerrestre(String n, String d, int x, int y, int vMov){
-        super(n, d, x, y);
-        velocidadeMovimento = vMov;
-    }
+  // Construtor da classe RoboTerrestre
+  // Recebe o nome, direção, posição (x, y) e a velocidade de movimento
+  public RoboTerrestre(String n, String d, int x, int y, int vMov){
+      super(n, d, x, y); // Chama o construtor da classe pai (Robo)
+      this.velocidadeMovimento = vMov; // Define a velocidade de movimento
+  }
 
-    public void mover(int deltaX, int deltaY){
-      if (velocidadeMaxima >= velocidadeMovimento) {
-        setPosX(getPosX()+deltaX);
-        setPosY(getPosY()+deltaY);
-      }else{
-        System.out.println("Velocidade acima do limite");
+  // Sobrescreve o método mover da classe Robo
+  // Move o robô apenas se a velocidade estiver dentro do limite
+  @Override
+  public void mover(int deltaX, int deltaY){
+      if (velocidadeMovimento <= velocidadeMaxima){
+          this.setPosX(this.getPosX() + deltaX);
+          this.setPosY(this.getPosY() + deltaY);
+      } else {
+          System.out.println("Velocidade acima do limite");
       }
-    }
+  }
 
-    public int getVelocidadeMaxima() {
-        return velocidadeMaxima;
-    }
+  // Retorna a velocidade máxima do robô
+  public int getVelocidadeMaxima() {
+      return velocidadeMaxima;
+  }
 
-    public void setVelocidadeMaxima(int velocidadeMaxima) {
-        this.velocidadeMaxima = velocidadeMaxima;
-    }
+  // Define uma nova velocidade máxima para o robô
+  public void setVelocidadeMaxima(int velocidadeMaxima) {
+      this.velocidadeMaxima = velocidadeMaxima;
+  }
 
-    public int getVelocidadeMovimento() {
-        return velocidadeMovimento;
-    }
+  // Retorna a velocidade de movimento do robô
+  public int getVelocidadeMovimento() {
+      return velocidadeMovimento;
+  }
 
-    public void setVelocidadeMovimento(int velocidadeMovimento) {
-        this.velocidadeMovimento = velocidadeMovimento;
-    }
+  // Define a velocidade de movimento do robô
+  public void setVelocidadeMovimento(int velocidadeMovimento) {
+      this.velocidadeMovimento = velocidadeMovimento;
+  }
 }
