@@ -8,6 +8,9 @@ public class Ambiente {
     
     // Lista de robôs presentes no ambiente
     private ArrayList<Robo> robos = new ArrayList<Robo>();
+    
+    // Lista de objetos presentes no ambiente
+    private ArrayList<Obstaculo> obstaculos = new ArrayList<Obstaculo>();
 
     // Construtor para criar um ambiente 2D (sem altura)
     public Ambiente(int l, int c) {
@@ -37,6 +40,37 @@ public class Ambiente {
     // Adiciona um robô à lista de robôs do ambiente
     public void adicionarRobo(Robo r){
         this.robos.add(r); // Adiciona o robô à lista de robôs
+    }
+
+    // Remove um robô da lista de robôs do ambiente
+    public boolean removerRobo(Robo r){
+        return(this.robos.remove(r)); // Retira o robô da lista de robôs
+    }
+
+    // Adiciona um obstaculo à lista de obstaculos do ambiente
+    public void adicionarObstaculo(Obstaculo o){
+        this.obstaculos.add(o); // Adiciona o obstaculo à lista de obstaculos
+    }
+
+    // Remove um obstaculo da lista de obstaculos do ambiente
+    public boolean removerObstaculo(Obstaculo o){
+        return(this.obstaculos.remove(o)); // Retira o obstaculo da lista de obstaculos
+    }
+
+    public void detectarColisoes(){
+        for(int i = 0; i < this.robos.size(); i++){
+            for(int j = 0; j < this.robos.size();j++){ // Verifica colisões com robôs
+                if(j != i){
+                    if(this.robos.get(i).getPosX() == this.robos.get(j).getPosX() && this.robos.get(i).getPosY() == this.robos.get(j).getPosY())
+                        System.out.println("Robo " + this.robos.get(i).getNome() + "esta colidindo com robô " + this.robos.get(j).getNome() + "na posicao " + this.robos.get(i).getPosX() + ", " + this.robos.get(i).getPosY());
+                }
+            }
+            for(int j = 0; j < this.obstaculos.size();j++){ // Verifica colisões com obstáculos
+                if((this.robos.get(i).getPosX() >= this.obstaculos.get(j).getPosicaoX1() && this.robos.get(i).getPosX() <= this.obstaculos.get(j).getPosicaoX2())
+                && (this.robos.get(i).getPosY() >= this.obstaculos.get(j).getPosicaoY1() && this.robos.get(i).getPosY() <= this.obstaculos.get(j).getPosicaoY2()))
+                    System.out.println("Robo " + this.robos.get(i).getNome() + "esta colidindo com obstaculo " + "na posicao " + this.robos.get(i).getPosX() + ", " + this.robos.get(i).getPosY());
+            }
+        }
     }
 
     // Retorna a largura do ambiente
@@ -77,5 +111,13 @@ public class Ambiente {
     // Define o comprimento do ambiente
     public void setComprimento(int comprimento) {
         this.comprimento = comprimento;
+    }
+
+    public ArrayList<Obstaculo> getObstaculos() {
+        return obstaculos;
+    }
+
+    public void setObstaculos(ArrayList<Obstaculo> obstaculos) {
+        this.obstaculos = obstaculos;
     }
 }

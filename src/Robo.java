@@ -8,6 +8,7 @@ public class Robo {
     private int posicaoY;        // Posição Y do robô no ambiente
 
     public String[] listaDirecoes = {"Norte","Leste", "Sul", "Oeste"}; // Lista de direções possíveis para o robô
+    private ArrayList<Sensor> sensores = new ArrayList<>();
 
     // Construtor da classe, inicializa o robô com nome, direção e posição inicial
     public Robo(String n, String d, int x, int y){
@@ -79,6 +80,9 @@ public class Robo {
         this.listaDirecoes = listaDirecoes;
     }
 
+    public void adicionarSensor(Sensor sensor) {
+        sensores.add(sensor);
+    }
     
     // Métodos getters (retornam os valores dos atributos)
     public String getNome(){
@@ -99,5 +103,9 @@ public class Robo {
     
     public int getPosY(){
         return this.posicaoY;
+    }
+
+    public ArrayList<Sensor> getSensores() {
+        return sensores;
     }
 }
