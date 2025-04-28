@@ -8,8 +8,8 @@ public class RoboAereo extends Robo {
 
     // Construtor da classe RoboAereo
     // Inicializa o robô com nome, direção, posição (x, y), altitude e altitude máxima
-    public RoboAereo(String n, String d, int x, int y, int alt, int altMax){
-        super(n, d, x, y); // Chama o construtor da classe pai (Robo)
+    public RoboAereo(String n, String d, int x, int y, Ambiente amb, int alt, int altMax){
+        super(n, d, x, y, amb); // Chama o construtor da classe pai (Robo)
         altitude = alt; // Define a altitude inicial do robô
         altitudeMaxima = altMax; // Define a altitude máxima permitida
     }

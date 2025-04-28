@@ -6,8 +6,8 @@ public class RoboEsteira extends RoboTerrestre {
     
     // Construtor da classe RoboEsteira
     // Inicializa o robô com nome, direção, posição (x, y), velocidade de movimento e velocidade de giro
-    public RoboEsteira(String n, String d, int x, int y, int vMov, int vGiro){
-        super(n, d, x, y, vMov); // Chama o construtor da classe RoboTerrestre
+    public RoboEsteira(String n, String d, int x, int y, Ambiente amb, int vMov, int vGiro){
+        super(n, d, x, y, amb, vMov); // Chama o construtor da classe RoboTerrestre
         VelocidadeGiro = vGiro; // Define a velocidade de giro do robô
     }
 

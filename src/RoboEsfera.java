@@ -6,8 +6,8 @@ public class RoboEsfera extends RoboTerrestre {
 
   // Construtor da classe RoboEsfera
   // Inicializa o robô com nome, direção, posição (x, y), velocidade de movimento e inércia
-  public RoboEsfera(String n, String d, int x, int y, int vMov, int i){
-      super(n, d, x, y, vMov); // Chama o construtor da classe RoboTerrestre
+  public RoboEsfera(String n, String d, int x, int y, Ambiente amb, int vMov, int i){
+      super(n, d, x, y, amb, vMov); // Chama o construtor da classe RoboTerrestre
       inercia = i; // Define a inércia do robô
   }
 

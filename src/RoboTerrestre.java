@@ -8,8 +8,8 @@ public class RoboTerrestre extends Robo {
 
   // Construtor da classe RoboTerrestre
   // Recebe o nome, direção, posição (x, y) e a velocidade de movimento
-  public RoboTerrestre(String n, String d, int x, int y, int vMov){
-      super(n, d, x, y); // Chama o construtor da classe pai (Robo)
+  public RoboTerrestre(String n, String d, int x, int y, Ambiente amb, int vMov){
+      super(n, d, x, y, amb); // Chama o construtor da classe pai (Robo)
       this.velocidadeMovimento = vMov; // Define a velocidade de movimento
   }
 

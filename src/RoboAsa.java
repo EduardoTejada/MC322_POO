@@ -9,8 +9,8 @@ public class RoboAsa extends RoboAereo {
 
     // Construtor da classe RoboAsa
     // Inicializa o robô com nome, direção, posição (x, y), altitude atual, altitude máxima e velocidade mínima para subida
-    public RoboAsa(String n, String d, int x, int y, int alt, int altMax, int velMin){
-        super(n, d, x, y, alt, altMax);  // Chama o construtor da classe RoboAereo
+    public RoboAsa(String n, String d, int x, int y, Ambiente amb, int alt, int altMax, int velMin){
+        super(n, d, x, y, amb, alt, altMax);  // Chama o construtor da classe RoboAereo
         velocidadeMinima = velMin;  // Define a velocidade mínima necessária para subir
     }
 
@@ -19,12 +19,19 @@ public class RoboAsa extends RoboAereo {
         // Verifica se o robô está se movendo rápido o suficiente para subir
         if (velocidadeMovimento >= velocidadeMinima) {
             setAltitude(getAltitude() + deltaZ);  // Aumenta a altitude do robô
+            this.setTemp(this.getTemp()+1); //no esforço de subida os motores elevam a temperatura do robô
         } else {
             // Exibe uma mensagem caso a velocidade não seja suficiente para subir
             System.out.println("Sem velocidade suficiente para subir, velocidade atual: " + getVelocidadeMovimento() + 
                                " velocidade necessária: " + velocidadeMinima);
         }
     }
+
+    public void descer(int deltaZ){
+       super.descer(deltaZ);
+       this.setTemp(this.getTemp()-1); //na descida o robô plana com os motores desligados e perde temperatura
+
+        }
 
     // Retorna a velocidade mínima necessária para subir
     public int getVelocidadeMinima() {

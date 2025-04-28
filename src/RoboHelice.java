@@ -7,8 +7,8 @@ public class RoboHelice extends RoboAereo {
 
     // Construtor da classe RoboHelice
     // Inicializa o robô com nome, direção, posição (x, y), altitude atual, altitude máxima e altitude mínima necessária para movimentação
-    public RoboHelice(String n, String d, int x, int y, int alt, int altMax, int altMin){
-        super(n, d, x, y, alt, altMax); // Chama o construtor da classe RoboAereo
+    public RoboHelice(String n, String d, int x, int y, Ambiente amb, int alt, int altMax, int altMin){
+        super(n, d, x, y, amb, alt, altMax); // Chama o construtor da classe RoboAereo
         altitudeMin = altMin; // Define a altura mínima necessária para movimentação
     }
     

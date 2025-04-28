@@ -6,16 +6,27 @@ public class Robo {
     private String direcao;      // Direção atual do robô (Norte, Sul, Leste, Oeste)
     private int posicaoX;        // Posição X do robô no ambiente
     private int posicaoY;        // Posição Y do robô no ambiente
+    private int temp = 36;       // Temperatura do Robô
+    private Ambiente amb;
 
     public String[] listaDirecoes = {"Norte","Leste", "Sul", "Oeste"}; // Lista de direções possíveis para o robô
     private ArrayList<Sensor> sensores = new ArrayList<>();
 
     // Construtor da classe, inicializa o robô com nome, direção e posição inicial
-    public Robo(String n, String d, int x, int y){
+    public Robo(String n, String d, int x, int y, Ambiente amb){
         this.nome = n;
         this.direcao = d;
         this.posicaoX = x;
         this.posicaoY = y;
+        this.amb = amb;
+    }
+
+    public Ambiente getAmb() {
+        return amb;
+    }
+
+    public void setAmb(Ambiente amb) {
+        this.amb = amb;
     }
 
     // Método para mover o robô na grade, alterando sua posição X e Y
@@ -107,5 +118,13 @@ public class Robo {
 
     public ArrayList<Sensor> getSensores() {
         return sensores;
+    }
+
+    public int getTemp() {
+        return temp;
+    }
+
+    public void setTemp(int temp) {
+        this.temp = temp;
     }
 }
