@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
         Ambiente a1 = new Ambiente(10, 10, 10);
-        RoboEsteira Tanque = new RoboEsteira("Tanque", "Norte", 1, 2, 1, 6);
-        RoboEsfera BB8 = new RoboEsfera("BB8", "Sul", 5, 5, 2, 2); //BB8 é o drone da ultima trilogia de StarWars
-        RoboHelice drone = new RoboHelice("drone", "Leste", 2, 3, 0, 7, 2);
-        RoboAsa aviao = new RoboAsa("aviao", "Oeste", 6, 7, 0, 10, 4);
+        RoboEsteira Tanque = new RoboEsteira("Tanque", "Norte", 1, 2, a1, 1, 6);
+        RoboEsfera BB8 = new RoboEsfera("BB8", "Sul", 5, 5, a1, 2, 2); //BB8 é o drone da ultima trilogia de StarWars
+        RoboHelice drone = new RoboHelice("drone", "Leste", 2, 3, a1, 0, 7, 2);
+        RoboAsa aviao = new RoboAsa("aviao", "Oeste", 6, 7, a1, 0, 10, 4);
 
 
         //Teste da movimentação terrestre
