@@ -3,7 +3,7 @@ public class Obstaculo {
     private int posicaoX2, posicaoY2;
     private TipoObstaculo tipo;
 
-    Obstaculo(int posicaoX1, int posicaoY1, int altura, int posicaoX2, int posicaoY2){
+    public Obstaculo(int posicaoX1, int posicaoY1, int altura, int posicaoX2, int posicaoY2){
         this.posicaoX1 = posicaoX1;
         this.posicaoY1 = posicaoY1;
         this.altura = altura;

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -6,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Ambiente a1 = new Ambiente(10, 10, 10);
+        Ambiente a1 = new Ambiente(50, 50, 50);
         RoboEsteira Tanque = new RoboEsteira("Tanque", "Norte", 1, 2, a1, 1, 6);
         RoboEsfera BB8 = new RoboEsfera("BB8", "Sul", 5, 5, a1, 2, 2); //BB8 é o drone da ultima trilogia de StarWars
         RoboHelice drone = new RoboHelice("drone", "Leste", 2, 3, a1, 0, 7, 2);
@@ -32,6 +31,15 @@ public class Main {
         drone.adicionarSensor(s3_p);
         aviao.adicionarSensor(s4_p);
 
+        Obstaculo o1 = new Obstaculo(4, 4, 0, 5, 5);
+        o1.setTipo(TipoObstaculo.PAREDE);
+
+        a1.adicionarObstaculo(o1);
+        a1.adicionarRobo(Tanque);
+        a1.adicionarRobo(BB8);
+        a1.adicionarRobo(drone);
+        a1.adicionarRobo(aviao);
+        
         int opcao = -1;
         while (opcao != 0) {
             System.out.println("\n===== MENU INTERATIVO =====");
@@ -46,13 +54,13 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    System.out.println(Tanque);
-                    System.out.println(BB8);
-                    System.out.println(drone);
-                    System.out.println(aviao);
+                    System.out.println(Tanque.getNome() + " X: " + Tanque.getPosX() + " Y: " + Tanque.getPosY());
+                    System.out.println(BB8.getNome() + " X: " + BB8.getPosX() + " Y: " + BB8.getPosY());
+                    System.out.println(drone.getNome() + " X: " + drone.getPosX() + " Y: " + drone.getPosY() + " Z: " + drone.getAltitude());
+                    System.out.println(aviao.getNome() + " X: " + aviao.getPosX() + " Y: " + aviao.getPosY() + " Z: " + aviao.getAltitude());
                     break;
                 case 2:
-                    System.out.println(a1);
+                    System.out.println("Obstaculos: " + a1.getObstaculos() + "\nRobos: " + a1.getRobos());
                     break;
                 case 3:
                     System.out.println("Escolha um robo (1: Tanque, 2: BB8): ");
@@ -82,7 +90,7 @@ public class Main {
                     System.out.print("Valor: ");
                     int valor = scanner.nextInt();
 
-                    switch(escolha) {
+                    switch(escolha2) {
                         case 1:
                             if (altOpcao == 1)
                                 drone.subir(valor);
@@ -139,7 +147,7 @@ public class Main {
         }
 
         scanner.close();
-        /*
+        
         //Teste da movimentação terrestre
         Tanque.mover(3, 5);
         BB8.mover(15, 9); //a função específica do robo esfera é a sua inércia de movimentação
@@ -191,6 +199,6 @@ public class Main {
         aviao.subir(3); // nova tentativa de elevar a altura
         System.out.println("Nova velocidade do "+aviao.getNome()+": "+ aviao.getVelocidadeMovimento());
         System.out.println("Nova Altura do "+aviao.getNome()+": "+ aviao.getAltitude());
-        */
+        
     }
 }
