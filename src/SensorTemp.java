@@ -11,9 +11,9 @@ public class SensorTemp extends Sensor {
         //Detctando outros Robôs
         for (Robo rb : amb.getRobos()){ //Verifica a lista de outros robôs no ambiente e retorna as coordenadas daqueles que estão dentro do raio do snessor
             if(this.getRaio() >= Math.sqrt(Math.Pow(rb.getPosX() , 2)+Math.Pow(rb.getPosY , 2))){
-                System.out.println("Robô detectado: (" + rb.getPosX() + ", " + rb.getPosY() + ")")
+                System.out.println("Robô detectado: (" + rb.getPosX() + ", " + rb.getPosY() + ")");
             }else{
-                System.out.println("Nenhum robô detectado:")
+                System.out.println("Nenhum robô detectado:");
             }
         }
         
