@@ -5,7 +5,7 @@ public abstract class Sensor {
         this.raio = r;
     }
 
-    public abstract void monitorar();
+    public abstract void monitorar(Ambiente amb);
 
     public double getRaio() {
         return raio;

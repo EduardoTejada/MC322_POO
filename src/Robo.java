@@ -6,6 +6,7 @@ public class Robo {
     private String direcao;      // Direção atual do robô (Norte, Sul, Leste, Oeste)
     private int posicaoX;        // Posição X do robô no ambiente
     private int posicaoY;        // Posição Y do robô no ambiente
+    private int altitude = 0;        // Posição Z do robô no ambiente
     private int temp = 36;       // Temperatura do Robô
     private Ambiente amb;
 
@@ -19,6 +20,14 @@ public class Robo {
         this.posicaoX = x;
         this.posicaoY = y;
         this.amb = amb;
+    }
+
+    public int getAltitude() {
+        return altitude;
+    }
+
+    public void setAltitude(int altitude) {
+        this.altitude = altitude;
     }
 
     public Ambiente getAmb() {
