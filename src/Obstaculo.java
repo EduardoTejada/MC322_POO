@@ -1,4 +1,4 @@
-public class Obstaculo {
+public class Obstaculo implements Entidade{
     private int posicaoX1, posicaoY1, altura;
     private int posicaoX2, posicaoY2;
     private TipoObstaculo tipoObs;

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Ambiente {
     // Atributos que definem as dimensões do ambiente
@@ -12,12 +13,15 @@ public class Ambiente {
     // Lista de objetos presentes no ambiente
     private ArrayList<Obstaculo> obstaculos = new ArrayList<Obstaculo>();
 
+    private List<Entidade> entidades = new ArrayList<>();
+
+    
     // Construtor para criar um ambiente 2D (sem altura)
     public Ambiente(int l, int c) {
         this.largura = l;    // Define a largura do ambiente
         this.comprimento = c; // Define o comprimento do ambiente
     }
-
+    
     // Construtor para criar um ambiente 3D (com altura)
     public Ambiente(int l, int c, int a) {
         this.largura = l;     // Define a largura do ambiente
