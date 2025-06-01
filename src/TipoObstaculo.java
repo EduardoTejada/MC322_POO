@@ -1,7 +1,7 @@
 public enum TipoObstaculo {
     PAREDE(6, true),
-    PORTA_ABERTA(5, true),
-    PORTA_FECHADA(5, false),
+    PORTA_ABERTA(5, false),
+    PORTA_FECHADA(5, true),
     RAMPA(8, false),
     OUTRO(-1, false);
 

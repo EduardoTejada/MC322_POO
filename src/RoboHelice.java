@@ -10,6 +10,8 @@ public class RoboHelice extends RoboAereo {
     public RoboHelice(String n, String d, int x, int y, Ambiente amb, int alt, int altMax, int altMin){
         super(n, d, x, y, amb, alt, altMax); // Chama o construtor da classe RoboAereo
         altitudeMin = altMin; // Define a altura mínima necessária para movimentação
+        this.setRepresentacao('H');
+        this.setDescricao("Variacao da classe epresenta um robô aéreo semelhante a um drone ou helicóptero, que só pode se mover nas direções X e Y após atingir uma altura mínima");
     }
     
     // Método para mover o robô nas direções X e Y

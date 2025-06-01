@@ -1,6 +1,7 @@
 // Classe RoboAsa que herda de RoboAereo
 // Representa um robô aéreo semelhante a um avião, que só pode ganhar altitude enquanto se movimenta para frente, com uma velocidade mínima
 public class RoboAsa extends RoboAereo {
+
     // Atributo que define a velocidade mínima necessária para o robô subir
     private int velocidadeMinima;
     
@@ -12,6 +13,9 @@ public class RoboAsa extends RoboAereo {
     public RoboAsa(String n, String d, int x, int y, Ambiente amb, int alt, int altMax, int velMin){
         super(n, d, x, y, amb, alt, altMax);  // Chama o construtor da classe RoboAereo
         velocidadeMinima = velMin;  // Define a velocidade mínima necessária para subir
+        this.setRepresentacao('S');
+        this.setDescricao("Representa um robô aéreo semelhante a um avião, que só pode ganhar altitude enquanto se movimenta para frente com uma velocidade mínima");
+
     }
 
     // Método para subir o robô, aumentando a altitude

@@ -9,6 +9,9 @@ public class Robo {
     private int altitude = 0;        // Posição Z do robô no ambiente
     private int temp = 36;       // Temperatura do Robô
     private Ambiente amb;
+    private TipoEntidade te = TipoEntidade.ROBO;
+    private char representacao = 'R';
+    private String descricao = "Classe primitiva para todos os tipos de robôs";
 
     public String[] listaDirecoes = {"Norte","Leste", "Sul", "Oeste"}; // Lista de direções possíveis para o robô
     private ArrayList<Sensor> sensores = new ArrayList<>();
@@ -20,6 +23,14 @@ public class Robo {
         this.posicaoX = x;
         this.posicaoY = y;
         this.amb = amb;
+    }
+
+    public void setRepresentacao(char representacao) {
+        this.representacao = representacao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public int getAltitude() {
@@ -136,4 +147,27 @@ public class Robo {
     public void setTemp(int temp) {
         this.temp = temp;
     }
+
+    public int getX(){
+        return this.posicaoX;
+    }
+    
+    public int getY(){
+        return this.posicaoY;
+    }
+    public int getZ(){
+        return this.altitude;
+    }
+
+    public TipoEntidade getTipo(){
+        return this.te;
+    }
+
+    public char getRepresentacao(){
+        return this.representacao;
+    }
+
+    public String getDescricao(){
+        return this.descricao;
+    };
 }

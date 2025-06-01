@@ -11,6 +11,8 @@ public class RoboTerrestre extends Robo {
   public RoboTerrestre(String n, String d, int x, int y, Ambiente amb, int vMov){
       super(n, d, x, y, amb); // Chama o construtor da classe pai (Robo)
       this.velocidadeMovimento = vMov; // Define a velocidade de movimento
+      this.setRepresentacao('T');
+      this.setDescricao("Variacao da classe para os robos que não podem voar (posicao no eixo z = 0)");
   }
 
   // Sobrescreve o método mover da classe Robo

@@ -9,6 +9,9 @@ public class RoboEsteira extends RoboTerrestre {
     public RoboEsteira(String n, String d, int x, int y, Ambiente amb, int vMov, int vGiro){
         super(n, d, x, y, amb, vMov); // Chama o construtor da classe RoboTerrestre
         VelocidadeGiro = vGiro; // Define a velocidade de giro do robô
+        this.setRepresentacao('E');
+        this.setDescricao("Representa um robô terrestre que se movimenta com esteiras e pode girar");
+
     }
 
     // Método para girar o robô no sentido horário

@@ -9,6 +9,8 @@ public class RoboAereo extends Robo {
         super(n, d, x, y, amb); // Chama o construtor da classe pai (Robo)
         this.setAltitude(alt); // Define a altitude inicial do robô
         altitudeMaxima = altMax; // Define a altitude máxima permitida
+        this.setRepresentacao('A');
+        this.setDescricao("Variacao da classe para os robos que pode voar (mover no eixo z)");
     }
     
     // Método para subir o robô em uma determinada altitude (deltaZ)

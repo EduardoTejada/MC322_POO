@@ -9,6 +9,8 @@ public class RoboEsfera extends RoboTerrestre {
   public RoboEsfera(String n, String d, int x, int y, Ambiente amb, int vMov, int i){
       super(n, d, x, y, amb, vMov); // Chama o construtor da classe RoboTerrestre
       inercia = i; // Define a inércia do robô
+      this.setRepresentacao('F');
+      this.setDescricao("Representa um robô terrestre com inércia adicional ao movimento, imagine um BB8 feito de chumbo");
   }
 
   // Modificação da função mover acrescentando uma quantidade a mais de movimento que depende da inércia do robô
