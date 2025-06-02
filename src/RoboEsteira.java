@@ -1,6 +1,6 @@
 // Classe RoboEsteira que herda de RoboTerrestre
 // Representa um robô terrestre que se movimenta com esteiras e pode girar
-public class RoboEsteira extends RoboTerrestre {
+public class RoboEsteira extends RoboTerrestre implements InterfaceCombate{
     // Atributo que representa a velocidade de giro do robô
     private int VelocidadeGiro;
     
@@ -36,4 +36,10 @@ public class RoboEsteira extends RoboTerrestre {
     public void setVelocidadeGiro(int velocidadeGiro) {
         VelocidadeGiro = velocidadeGiro;
     }
+
+   public void atirar(int x, int y){
+
+    System.out.println("Zona ("+ x + y+") limpa");
+   }
+
 }

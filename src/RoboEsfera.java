@@ -1,6 +1,6 @@
 // Classe RoboEsfera que herda de RoboTerrestre
 // Representa um robô terrestre com inércia adicional ao movimento
-public class RoboEsfera extends RoboTerrestre {
+public class RoboEsfera extends RoboTerrestre implements InterfdaceFuga{
   // Atributo que representa a inércia do robô, afetando seu movimento
   private int inercia;
 
@@ -32,5 +32,11 @@ public class RoboEsfera extends RoboTerrestre {
 
     public void setInercia(int inercia) {
       this.inercia = inercia;
+    }
+
+    //foge para extremidade do ambiente
+    public void fugir(){
+      setPosX(this.getAmb().getComprimento());
+      setPosY(this.getAmb().getLargura());
     }
 }
