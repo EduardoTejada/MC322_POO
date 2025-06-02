@@ -1,5 +1,5 @@
 // Classe RoboAereo que herda da classe Robo
-public class RoboAereo extends Robo {
+public class RoboAereo extends Robo implements InterfaceSensoriavel{
     // Altitude máxima permitida para o robô
     private int altitudeMaxima;
 
@@ -42,5 +42,9 @@ public class RoboAereo extends Robo {
     // Define um novo valor para a altitude máxima do robô
     public void setAltitudeMaxima(int altitudeMaxima) {
         this.altitudeMaxima = altitudeMaxima;
+    }
+
+    public void acionarSensores(){
+
     }
 }

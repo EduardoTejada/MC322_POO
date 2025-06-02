@@ -1,5 +1,5 @@
 // Classe RoboTerrestre que herda da classe Robo
-public class RoboTerrestre extends Robo {
+public class RoboTerrestre extends Robo implements InterfaceSensoriavel {
   // Velocidade máxima permitida para o robô terrestre
   private int velocidadeMaxima = 10;
   
@@ -45,5 +45,9 @@ public class RoboTerrestre extends Robo {
   // Define a velocidade de movimento do robô
   public void setVelocidadeMovimento(int velocidadeMovimento) {
       this.velocidadeMovimento = velocidadeMovimento;
+  }
+
+  public void acionarSensores(){
+    
   }
 }

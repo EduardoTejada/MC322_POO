@@ -7,6 +7,11 @@ public abstract class Sensor {
 
     public abstract void monitorar(Ambiente amb);
 
+    public void acionarSensores(Ambiente amb){ //Adaptado par ainterface
+        this.monitorar(amb);
+    }
+    
+
     public double getRaio() {
         return raio;
     }

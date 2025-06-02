@@ -25,6 +25,15 @@ public class Robo {
         this.amb = amb;
     }
 
+    public void enviarMensagem(Robo destinatario, String mensagem){
+        System.out.println("mensagem enviada por " + this.nome + "para " + destinatario.nome + ": " + mensagem);
+    }
+
+    public void receberMensagem(String mensagem){
+        System.out.println("mensagem recebida por " + this.nome + ": " + mensagem);
+        
+    }
+
     public void setRepresentacao(char representacao) {
         this.representacao = representacao;
     }
