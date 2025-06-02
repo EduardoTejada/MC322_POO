@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Robo {
+public class Robo implements Entidade {
     // Atributos do robô
     private String nome;         // Nome do robô
     private String direcao;      // Direção atual do robô (Norte, Sul, Leste, Oeste)
