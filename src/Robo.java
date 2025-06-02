@@ -59,16 +59,12 @@ public class Robo {
     }
 
     // Método para mover o robô na grade, alterando sua posição X e Y
-    public void mover(int deltaX, int deltaY){
-        if(this.posicaoX + deltaX >= 0)
-            this.posicaoX += deltaX;
-        else
-            this.posicaoX = 0;
-        
-        if(this.posicaoY + deltaY >= 0)
-            this.posicaoY += deltaY;
-        else
-            this.posicaoY = 0;
+    public void mover(int deltaX, int deltaY) {
+        try {
+            amb.moverEntidade((Entidade)this, posicaoX + deltaX, posicaoY + deltaY, altitude);
+        } catch (Ambiente.ColisaoException e) {
+            System.out.println("Movimento inválido: " + e.getMessage());
+        }
     }
 
     // Exibe a posição atual do robô no console
