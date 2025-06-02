@@ -1,5 +1,5 @@
 // Classe RoboAereo que herda da classe Robo
-public class RoboAereo extends Robo implements InterfaceSensoriavel{
+public class RoboAereo extends Robo implements InterfaceSensoriavel, InterfaceComunicavel{
     // Altitude máxima permitida para o robô
     private int altitudeMaxima;
 
