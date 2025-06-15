@@ -1,3 +1,7 @@
+package sensores;
+import ambiente.Ambiente;
+import robo.Robo;
+
 public class SensorTemp extends Sensor {
     private Robo robo; // Robô que o sensor está monitorando
 

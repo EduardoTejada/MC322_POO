@@ -1,3 +1,4 @@
+package funcionalidades;
 //Implmentada em robo esteira
 public interface InterfaceCombate {
 

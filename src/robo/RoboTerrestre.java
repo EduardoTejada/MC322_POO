@@ -1,4 +1,9 @@
+package robo;
 // Classe RoboTerrestre que herda da classe Robo
+
+import ambiente.Ambiente;
+import sensores.InterfaceSensoriavel;
+
 public class RoboTerrestre extends Robo implements InterfaceSensoriavel {
   // Velocidade máxima permitida para o robô terrestre
   private int velocidadeMaxima = 10;

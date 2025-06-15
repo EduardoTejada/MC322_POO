@@ -1,3 +1,4 @@
+package obstaculo;
 public enum TipoObstaculo {
     PAREDE(6, true),
     PORTA_ABERTA(5, false),

@@ -1,5 +1,10 @@
+package robo;
 // Classe RoboEsfera que herda de RoboTerrestre
 // Representa um robô terrestre com inércia adicional ao movimento
+
+import ambiente.Ambiente;
+import funcionalidades.InterfdaceFuga;
+
 public class RoboEsfera extends RoboTerrestre implements InterfdaceFuga{
   // Atributo que representa a inércia do robô, afetando seu movimento
   private int inercia;

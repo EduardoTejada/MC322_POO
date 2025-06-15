@@ -1,3 +1,6 @@
+package sensores;
+import ambiente.Ambiente;
+
 public abstract class Sensor {
     private double raio;
 

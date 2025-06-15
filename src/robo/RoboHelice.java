@@ -1,6 +1,10 @@
+package robo;
 // Classe RoboHelice que herda de RoboAereo
 // Representa um robô aéreo semelhante a um drone ou helicóptero
 // Ele só pode se mover nas direções X e Y após atingir uma altura mínima
+
+import ambiente.Ambiente;
+
 public class RoboHelice extends RoboAereo {
     // Atributo que define a altura mínima necessária para se mover
     private int altitudeMin;

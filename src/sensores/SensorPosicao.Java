@@ -1,5 +1,5 @@
-// Classe que representa um sensor de posição que detecta obstáculos e robôs ao redor
-public class SensorPosicao extends Sensor {
+package sensores;
+public class SensorPosicao extends Sensor { // Classe que representa um sensor de posição que detecta obstáculos e robôs ao redor
     private Robo robo; // Robô ao qual o sensor está acoplado
 
     // Construtor do sensor, recebe o raio de detecção e o robô associado

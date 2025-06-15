@@ -1,3 +1,4 @@
+package entidade;
 public interface Entidade {
     int getX();
     int getY();

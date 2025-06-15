@@ -1,4 +1,10 @@
+package robo;
 // Classe RoboAereo que herda da classe Robo
+
+import ambiente.Ambiente;
+import funcionalidades.InterfaceComunicavel;
+import sensores.InterfaceSensoriavel;
+
 public class RoboAereo extends Robo implements InterfaceSensoriavel, InterfaceComunicavel{
     // Altitude máxima permitida para o robô
     private int altitudeMaxima;

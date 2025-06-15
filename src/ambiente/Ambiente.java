@@ -1,5 +1,12 @@
+package ambiente;
 import java.util.ArrayList;
 import java.util.List;
+
+import entidade.Entidade;
+import entidade.TipoEntidade;
+import obstaculo.Obstaculo;
+import robo.Robo;
+import sensores.InterfaceSensoriavel;
 
 public class Ambiente {
     // Atributos que definem as dimensões do ambiente

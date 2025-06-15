@@ -1,8 +1,9 @@
-public class Obstaculo implements Entidade{
+package obstaculo;
+public class Obstaculo implements entidade.Entidade{
     private int posicaoX1, posicaoY1, altura;
     private int posicaoX2, posicaoY2;
     private TipoObstaculo tipoObs;
-    private TipoEntidade te = TipoEntidade.OBSTACULO;
+    private entidade.TipoEntidade te = entidade.TipoEntidade.OBSTACULO;
     private char representacao = 'O';
     private String descricao = "Obstáculo que pode ou não impedir a passagem do robô";
 
@@ -64,7 +65,7 @@ public class Obstaculo implements Entidade{
         return this.altura;
     }
 
-    public TipoEntidade getTipo(){
+    public entidade.TipoEntidade getTipo(){
         return this.te;
     }
 

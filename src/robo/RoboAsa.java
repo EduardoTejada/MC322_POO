@@ -1,5 +1,9 @@
+package robo;
 // Classe RoboAsa que herda de RoboAereo
 // Representa um robô aéreo semelhante a um avião, que só pode ganhar altitude enquanto se movimenta para frente, com uma velocidade mínima
+
+import ambiente.Ambiente;
+
 public class RoboAsa extends RoboAereo {
 
     // Atributo que define a velocidade mínima necessária para o robô subir

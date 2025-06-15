@@ -1,4 +1,11 @@
+package robo;
 import java.util.ArrayList;
+
+import ambiente.Ambiente;
+import ambiente.Ambiente.ColisaoException;
+import entidade.Entidade;
+import entidade.TipoEntidade;
+import sensores.Sensor;
 
 public class Robo implements Entidade {
     // Atributos do robô

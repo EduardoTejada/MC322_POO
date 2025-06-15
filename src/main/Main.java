@@ -1,4 +1,14 @@
+package main;
 import java.util.Scanner;
+
+import ambiente.Ambiente;
+import obstaculo.Obstaculo;
+import obstaculo.TipoObstaculo;
+import robo.RoboAsa;
+import robo.RoboEsfera;
+import robo.RoboEsteira;
+import robo.RoboHelice;
+import sensores.SensorTemp;
 
 
 public class Main {
@@ -21,18 +31,18 @@ public class Main {
         drone.adicionarSensor(s3_t);
         aviao.adicionarSensor(s4_t);
 
-        SensorPosicao s1_p = new SensorPosicao(5, Tanque);
-        SensorPosicao s2_p = new SensorPosicao(5, BB8);
-        SensorPosicao s3_p = new SensorPosicao(5, drone);
-        SensorPosicao s4_p = new SensorPosicao(5, aviao);
+        sensores.SensorPosicao s1_p = new sensores.SensorPosicao(5, Tanque);
+        sensores.SensorPosicao s2_p = new senssores.SensorPosicao(5, BB8);
+        sensores.SensorPosicao s3_p = new sensores.SensorPosicao(5, drone);
+        sensores.SensorPosicao s4_p = new sensores.SensorPosicao(5, aviao);
         
         Tanque.adicionarSensor(s1_p);
         BB8.adicionarSensor(s2_p);
         drone.adicionarSensor(s3_p);
         aviao.adicionarSensor(s4_p);
 
-        Obstaculo o1 = new Obstaculo(4, 4, 0, 5, 5);
-        o1.setTipo(TipoObstaculo.PAREDE);
+        obstaculo.Obstaculo o1 = new obstaculo.Obstaculo(4, 4, 0, 5, 5);
+        o1.setTipo(obstaculo.TipoObstaculo.PAREDE);
 
         a1.adicionarObstaculo(o1);
         a1.adicionarRobo(Tanque);

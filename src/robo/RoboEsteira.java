@@ -1,5 +1,10 @@
+package robo;
 // Classe RoboEsteira que herda de RoboTerrestre
 // Representa um robô terrestre que se movimenta com esteiras e pode girar
+
+import ambiente.Ambiente;
+import funcionalidades.InterfaceCombate;
+
 public class RoboEsteira extends RoboTerrestre implements InterfaceCombate{
     // Atributo que representa a velocidade de giro do robô
     private int VelocidadeGiro;
