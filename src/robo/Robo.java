@@ -5,6 +5,7 @@ import ambiente.Ambiente;
 import ambiente.Ambiente.ColisaoException;
 import entidade.Entidade;
 import entidade.TipoEntidade;
+import obstaculo.Obstaculo;
 import sensores.Sensor;
 
 public class Robo implements Entidade {
@@ -91,6 +92,12 @@ public class Robo implements Entidade {
                 outroRobo.getPosX() == this.posicaoX && outroRobo.getPosY() == this.posicaoY+1 || 
                 outroRobo.getPosX() == this.posicaoX && outroRobo.getPosY() == this.posicaoY-1);
     }
+
+    // Verifica se algum obstaculo esta do lado
+    private boolean obstaculoEhAdjacente(Obstaculo o){
+        return( (this.getPosX()+1 >= o.getPosicaoX1() || this.getPosX()-1 <= o.getPosicaoX2()) && 
+                (this.getPosY()+1 >= o.getPosicaoY1() || this.getPosY()-1 <= o.getPosicaoY2()));
+    }
     
     // Método para identificar se há um obstáculo (outro robô) em uma posição adjacente
     public void identificarObstaculo(Ambiente a){
@@ -100,6 +107,20 @@ public class Robo implements Entidade {
                     // Exibe uma mensagem informando que há um obstáculo
                     System.out.println("Robo " + r.get(i).getNome() + "na posicao " + r.get(i).getPosX() + ", " + r.get(i).getPosY() + " é um obstáculo");
         }
+    }
+    
+    // Método para identificar se há um obstáculo (outro robô) em uma posição adjacente
+    public ArrayList<Obstaculo> identificarObstaculosAdjacentesAoRobo(Ambiente a){
+        ArrayList<Obstaculo> o = a.getObstaculos(); // Obtém a lista de robôs presentes no ambiente
+        ArrayList<Obstaculo> adj = new ArrayList<>();
+        for(int i = 0; i < o.size(); i++){
+                if(obstaculoEhAdjacente(o.get(i))){ // Verifica se a posição do outro robô é adjacente a desse robô
+                    // Exibe uma mensagem informando que há um obstáculo
+                    System.out.println("Obstaculo " + o.get(i).getTipo() + "na posicao " + o.get(i).getPosicaoX1() + ", " + o.get(i).getPosicaoY1() + " é um obstáculo");
+                    adj.add(o.get(i));
+                }
+        }
+        return adj;
     }
 
     // Métodos setters (definem novos valores para os atributos)
