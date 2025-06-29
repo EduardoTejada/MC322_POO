@@ -1,6 +1,7 @@
 package missao;
 
 import ambiente.Ambiente;
+import arquivos.EscritorDeArquivo;
 import obstaculo.Obstaculo;
 import robo.Robo;
 
@@ -10,7 +11,9 @@ public class MissaoReconhecerPerimetro implements Missao{
     @Override
     public void executar(Robo r, Ambiente a) {
         for (Obstaculo o : r.identificarObstaculosAdjacentesAoRobo(a)) {
-            System.out.println("Obstaculo do tipo: " + o.getTipo() + ", na posicao " + o.getPosicaoX1() + o.getPosicaoX2() + o.getPosicaoY1() + o.getPosicaoY2());
+            String msg = "Obstaculo do tipo: " + o.getTipo() + ", na posicao " + o.getPosicaoX1() + o.getPosicaoX2() + o.getPosicaoY1() + o.getPosicaoY2();
+            System.out.println(msg);
+            EscritorDeArquivo.writeFile(msg);
         }
     }
 }
