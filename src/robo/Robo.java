@@ -2,7 +2,6 @@ package robo;
 import java.util.ArrayList;
 
 import ambiente.Ambiente;
-import ambiente.Ambiente.ColisaoException;
 import entidade.Entidade;
 import entidade.TipoEntidade;
 import obstaculo.Obstaculo;

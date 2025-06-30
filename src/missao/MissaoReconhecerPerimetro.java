@@ -1,7 +1,7 @@
 package missao;
 
 import ambiente.Ambiente;
-import arquivos.EscritorDeArquivo;
+import comunicacao.EscritorDeArquivo;
 import obstaculo.Obstaculo;
 import robo.Robo;
 

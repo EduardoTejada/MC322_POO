@@ -1,4 +1,4 @@
-package arquivos;
+package comunicacao;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

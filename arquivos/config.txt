@@ -1,0 +1,4 @@
+AMBIENTE 10 10 3
+2 ROBO Sensoravel R1 1 1 0
+3 ROBO Comunicavel R2 2 2 0
+4 OBSTACULO Arvore 5 5 0 0

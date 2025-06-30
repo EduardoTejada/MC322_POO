@@ -1,4 +1,7 @@
 package sensores;
+import ambiente.Ambiente;
+import robo.Robo;
+
 public class SensorPosicao extends Sensor { // Classe que representa um sensor de posição que detecta obstáculos e robôs ao redor
     private Robo robo; // Robô ao qual o sensor está acoplado
 

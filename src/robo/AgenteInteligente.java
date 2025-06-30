@@ -7,7 +7,6 @@ public abstract class AgenteInteligente extends Robo{
     
     public AgenteInteligente(String n, String d, int x, int y, Ambiente amb) {
         super(n, d, x, y, amb);
-        //TODO Auto-generated constructor stub
     }
 
     protected missao.Missao missao;

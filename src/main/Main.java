@@ -2,8 +2,7 @@ package main;
 import java.util.Scanner;
 
 import ambiente.Ambiente;
-import obstaculo.Obstaculo;
-import obstaculo.TipoObstaculo;
+import comunicacao.LeitorConfiguracao;
 import robo.RoboAsa;
 import robo.RoboEsfera;
 import robo.RoboEsteira;
@@ -15,7 +14,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        
         Ambiente a1 = new Ambiente(50, 50, 50);
+        LeitorConfiguracao.carregar("config.txt", a1);
+
         RoboEsteira Tanque = new RoboEsteira("Tanque", "Norte", 1, 2, a1, 1, 6);
         RoboEsfera BB8 = new RoboEsfera("BB8", "Sul", 5, 5, a1, 2, 2); //BB8 é o drone da ultima trilogia de StarWars
         RoboHelice drone = new RoboHelice("drone", "Leste", 2, 3, a1, 0, 7, 2);
@@ -30,16 +32,7 @@ public class Main {
         BB8.adicionarSensor(s2_t);
         drone.adicionarSensor(s3_t);
         aviao.adicionarSensor(s4_t);
-
-        sensores.SensorPosicao s1_p = new sensores.SensorPosicao(5, Tanque);
-        sensores.SensorPosicao s2_p = new senssores.SensorPosicao(5, BB8);
-        sensores.SensorPosicao s3_p = new sensores.SensorPosicao(5, drone);
-        sensores.SensorPosicao s4_p = new sensores.SensorPosicao(5, aviao);
         
-        Tanque.adicionarSensor(s1_p);
-        BB8.adicionarSensor(s2_p);
-        drone.adicionarSensor(s3_p);
-        aviao.adicionarSensor(s4_p);
 
         obstaculo.Obstaculo o1 = new obstaculo.Obstaculo(4, 4, 0, 5, 5);
         o1.setTipo(obstaculo.TipoObstaculo.PAREDE);
@@ -127,19 +120,19 @@ public class Main {
 
                     switch(escolha4) {
                         case 1:
-                            if(escolha3 == 1) s1_t.monitorar(a1); else if(escolha3 == 2) s1_p.monitorar(a1);
+                            if(escolha3 == 1) s1_t.monitorar(a1);
                             else System.out.println("Sensor invalido!");
                             break;
                         case 2:
-                            if(escolha3 == 1) s2_t.monitorar(a1); else if(escolha3 == 2) s2_p.monitorar(a1);
+                            if(escolha3 == 1) s2_t.monitorar(a1);
                             else System.out.println("Sensor invalido!");
                             break;
                         case 3:
-                            if(escolha3 == 1) s3_t.monitorar(a1); else if(escolha3 == 2) s3_p.monitorar(a1);
+                            if(escolha3 == 1) s3_t.monitorar(a1);
                             else System.out.println("Sensor invalido!");
                             break;
                         case 4:
-                            if(escolha3 == 1) s4_t.monitorar(a1); else if(escolha3 == 2) s4_p.monitorar(a1);
+                            if(escolha3 == 1) s4_t.monitorar(a1);
                             else System.out.println("Sensor invalido!");
                             break;
                         default:
